@@ -22,3 +22,17 @@ function renderChart(data) {
         }
     });
 }
+
+
+const data = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+    values: [12, 19, 3, 5, 2, 3]
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+    const data = {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        values: [12, 19, 3, 5, 2, 3]
+    };
+    renderChart(data);
+});
