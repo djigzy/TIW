@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-  .project-item video,
-  .project-item iframe {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+    .project-item video,
+    .project-item iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
   <title>Igor Petrovic - Personal Portfolio</title>
-  
+
   <link rel="shortcut icon" href="./assets/images/my-avatar.png" type="image/x-icon">
- 
+
   <link rel="stylesheet" href="./css/styles.css">
- 
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  
+
   <div id="FullImageView">
     <img id="FullImage" />
     <span id="CloseButton" onclick="CloseFullView()">&times;</span>
@@ -70,9 +72,9 @@
         <div class="separator"></div>
       </div>
     </aside>
-   
+
     <div class="main-content">
-     
+
       <nav class="navbar">
         <ul class="navbar-list">
           <li class="navbar-item">
@@ -87,18 +89,19 @@
         </ul>
       </nav>
 
- 
-      
+
+
       <article class="about  active" data-page="about">
         <header>
           <h2 class="h2 article-title">About me</h2>
         </header>
         <section class="about-text">
           <p>
-            Self taught graphic designer based in Rijeka, Croatia. <br> I've got 10+ years of experience in Adobe Photoshop and 5+ years in Adobe Illustrator and Adobe InDesign.
+            Self taught graphic designer based in Rijeka, Croatia. <br> I've got 10+ years of experience in Adobe
+            Photoshop and 5+ years in Adobe Illustrator and Adobe InDesign.
           </p>
         </section>
-        
+
         <section class="service">
           <h3 class="h3 service-title">What i'm doing</h3>
           <ul class="service-list">
@@ -159,27 +162,58 @@
             </button>
           </section>
         </div>
-             
-      <section class="portfolio-stats">
-        <h2 class="h2 article-title">Portfolio Statistics</h2>
-        <div id="category-chart"></div>
-      </section>
 
-      <section class="chart">
-        <canvas id="chart" width="400" height="200"></canvas>
+        <section class="portfolio-stats">
+          <h2 class="h2 article-title">Portfolio Statistics</h2>
+          <div id="category-chart"></div>
+        </section>
 
-        <h1>Google Analytics Data</h1>
-        <button onclick="handleAuthClick()">Sign In</button>
-        <button onclick="handleSignoutClick()">Sign Out</button>
-      </section>
+        <section class="chart">
+          <canvas id="chart" width="400" height="200"></canvas>
+
+          <!-- <h1>Google Analytics Data</h1>
+          <button onclick="handleAuthClick()">Sign In</button>
+          <button onclick="handleSignoutClick()">Sign Out</button> -->
+
+          <div id="g_id_onload" data-client_id="227185617727-8o7v5dsg7d7a7csral5tdsavih30jlql.apps.googleusercontent.com" data-login_uri="https://djigzy.github.io/TIW/"
+            data-auto_prompt="false">
+          </div>
+
+          <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
+            data-text="sign_in_with" data-size="large" data-logo_alignment="left">
+          </div>
+
+          <script>
+            function onSignInResponse(response) {
+                const credential = response.credential;
+                console.log("ID Token:", credential);
+    
+                const payload = JSON.parse(atob(credential.split('.')[1]));
+                console.log("User Info:", payload);
+    
+                fetchAnalyticsData(credential);
+            }
+    
+            window.onload = () => {
+                google.accounts.id.initialize({
+                    client_id: "227185617727-8o7v5dsg7d7a7csral5tdsavih30jlql.apps.googleusercontent.com",
+                    callback: onSignInResponse,
+                });
+    
+                google.accounts.id.prompt(); // Display the One Tap prompt
+            };
+        </script>
+
+
+        </section>
       </article>
 
 
 
 
 
- 
-    
+
+
       <article class="resume" data-page="resume">
         <header>
           <h2 class="h2 article-title">Resume</h2>
@@ -199,7 +233,7 @@
               <button data-resume-filter-btn="surveying">Surveying</button>
             </li>
           </ul>
-        </section>  
+        </section>
         <section class="timeline">
           <div class="title-wrapper">
             <div class="icon-box">
@@ -209,33 +243,37 @@
           </div>
           <ol class="timeline-list">
             <li class="timeline-item" data-category="IT">
-              <h4 class="h4 timeline-item-title"><a href="https://inf.uniri.hr/" target="_blank">Faculty of Informatics and Digital Technologies, University of Rijeka</a></h4>
+              <h4 class="h4 timeline-item-title"><a href="https://inf.uniri.hr/" target="_blank">Faculty of Informatics
+                  and Digital Technologies, University of Rijeka</a></h4>
               <span>2023 — Present</span>
               <p class="timeline-text">
                 mag.inf.
               </p>
             <li class="timeline-item" data-category="IT">
-              <h4 class="h4 timeline-item-title"><a href="https://inf.uniri.hr/" target="_blank">Faculty of Informatics and Digital Technologies, University of Rijeka</a></h4>
+              <h4 class="h4 timeline-item-title"><a href="https://inf.uniri.hr/" target="_blank">Faculty of Informatics
+                  and Digital Technologies, University of Rijeka</a></h4>
               <span>2020 — 2023</span>
               <p class="timeline-text">
                 univ.bacc.inf.
               </p>
             </li>
             <li class="timeline-item" data-category="IT">
-              <h4 class="h4 timeline-item-title"><a href="https://www.span.eu/hr/" target="_blank">Span infrastracture academy</a></h4>
+              <h4 class="h4 timeline-item-title"><a href="https://www.span.eu/hr/" target="_blank">Span infrastracture
+                  academy</a></h4>
               <span>25/07/2022 — 16/09/2022</span>
               <p class="timeline-text">
-                <ul class="timeline-text">
-                  <li>Azure IaaS - Creation of our own virtual network, resource groups, subnet creation</li>
-                  <li>Networks - DNS, DHCP, creating a domain, adding a client computer to the domain</li>
-                  <li>Active Directory - ADDS role, user creation, user rights, group policies</li>
-                  <li>Powershell - task automation (e.g. creating multiple users)</li>
-                  <li>FileShare - Managing user permissions, DFS role</li>
-                </ul>
+              <ul class="timeline-text">
+                <li>Azure IaaS - Creation of our own virtual network, resource groups, subnet creation</li>
+                <li>Networks - DNS, DHCP, creating a domain, adding a client computer to the domain</li>
+                <li>Active Directory - ADDS role, user creation, user rights, group policies</li>
+                <li>Powershell - task automation (e.g. creating multiple users)</li>
+                <li>FileShare - Managing user permissions, DFS role</li>
+              </ul>
               </p>
             </li>
             <li class="timeline-item" data-category="surveying">
-              <h4 class="h4 timeline-item-title"><a href="http://www.ss-gradjevinska-tehnicka-ri.skole.hr/" target="_blank">Construction Technical High School Rijeka</a></h4>
+              <h4 class="h4 timeline-item-title"><a href="http://www.ss-gradjevinska-tehnicka-ri.skole.hr/"
+                  target="_blank">Construction Technical High School Rijeka</a></h4>
               <span>2012 — 2016</span>
             </li>
           </ol>
@@ -276,7 +314,8 @@
           <ul class="skills-list content-card">
             <li class="skills-item">
               <div class="title-wrapper">
-                <h5 class="h5"><a href="https://www.adobe.com/products/photoshop.html" target="_blank">Adobe Photoshop</a></h5>
+                <h5 class="h5"><a href="https://www.adobe.com/products/photoshop.html" target="_blank">Adobe
+                    Photoshop</a></h5>
                 <data value="30">90%</data>
               </div>
               <div class="skill-progress-bg">
@@ -285,7 +324,8 @@
             </li>
             <li class="skills-item">
               <div class="title-wrapper">
-                <h5 class="h5"><a href="https://www.adobe.com/products/illustrator.html" target="_blank">Adobe Illustrator</a></h5>
+                <h5 class="h5"><a href="https://www.adobe.com/products/illustrator.html" target="_blank">Adobe
+                    Illustrator</a></h5>
                 <data value="70">70%</data>
               </div>
               <div class="skill-progress-bg">
@@ -294,7 +334,8 @@
             </li>
             <li class="skills-item">
               <div class="title-wrapper">
-                <h5 class="h5"><a href="https://www.adobe.com/products/indesign.html" target="_blank">Adobe InDesign</a></h5>
+                <h5 class="h5"><a href="https://www.adobe.com/products/indesign.html" target="_blank">Adobe InDesign</a>
+                </h5>
                 <data value="80">80%</data>
               </div>
               <div class="skill-progress-bg">
@@ -303,7 +344,8 @@
             </li>
             <li class="skills-item">
               <div class="title-wrapper">
-                <h5 class="h5"><a href="https://www.adobe.com/products/premiere.html" target="_blank">Adobe Premiere Pro</a></h5>
+                <h5 class="h5"><a href="https://www.adobe.com/products/premiere.html" target="_blank">Adobe Premiere
+                    Pro</a></h5>
                 <data value="50">50%</data>
               </div>
               <div class="skill-progress-bg">
@@ -322,7 +364,7 @@
           </ul>
         </section>
       </article>
-  
+
       <article class="portfolio" data-page="portfolio">
         <header>
           <h2 class="h2 article-title">Portfolio</h2>
@@ -374,7 +416,7 @@
               <li class="select-item">
                 <button data-select-item>Renders</button>
               </li>
-               <li class="select-item">
+              <li class="select-item">
                 <button data-filter-item>Videos</button>
               </li>
               <li class="select-item">
@@ -386,145 +428,145 @@
 
           <div class="container">
             <div class="horizontal project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-19.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-19.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-18.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-18.png" onclick="FullView(this.src)" />
             </div>
             <div class="horizontal project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-19.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-19.png" onclick="FullView(this.src)" />
             </div>
             <div class="horizontal project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-16.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-16.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-17.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-17.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-15.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-15.png" onclick="FullView(this.src)" />
             </div>
             <div class="horizontal project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-14.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-14.png" onclick="FullView(this.src)" />
             </div>
             <div class="vertical project-item" data-category="banners">
-              <img src="./assets/images/portfolio/banners/Banner-vertical-1.png" onclick="FullView(this.src)"/>
-            </div>
-            <div class="project-item"  data-category="posters">
-              <img src="./assets/images/portfolio/posters/Poster-2.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/banners/Banner-vertical-1.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="posters">
-              <img src="./assets/images/portfolio/posters/Poster-5.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/posters/Poster-2.png" onclick="FullView(this.src)" />
+            </div>
+            <div class="project-item" data-category="posters">
+              <img src="./assets/images/portfolio/posters/Poster-5.png" onclick="FullView(this.src)" />
             </div>
             <div class="horizontal project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-6.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-6.png" onclick="FullView(this.src)" />
             </div>
             <div class="horizontal project-item" data-category="renders">
-              <img src="./assets/images/portfolio/renders/Render-horizontal-1.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/renders/Render-horizontal-1.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="renders">
-              <img src="./assets/images/portfolio/renders/Render-horizontal-3.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/renders/Render-horizontal-3.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-1.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-1.png" onclick="FullView(this.src)" />
             </div>
             <div class="horizontal project-item" data-category="banners">
-              <img src="./assets/images/portfolio/banners/Banner-horizontal-3.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/banners/Banner-horizontal-3.png" onclick="FullView(this.src)" />
             </div>
             <div class="horizontal project-item" data-category="banners">
-              <img src="./assets/images/portfolio/banners/Banner-horizontal-5.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/banners/Banner-horizontal-5.png" onclick="FullView(this.src)" />
             </div>
             <div class="vertical project-item" data-category="banners">
-              <img src="./assets/images/portfolio/banners/Banner-vertical-5.png" onclick="FullView(this.src)"/>
-            </div>
-            <div class="project-item"  data-category="posters">
-              <img src="./assets/images/portfolio/posters/Poster-1.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/banners/Banner-vertical-5.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="posters">
-              <img src="./assets/images/portfolio/posters/Poster-4.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/posters/Poster-1.png" onclick="FullView(this.src)" />
+            </div>
+            <div class="project-item" data-category="posters">
+              <img src="./assets/images/portfolio/posters/Poster-4.png" onclick="FullView(this.src)" />
             </div>
             <div class="vertical project-item" data-category="banners">
-              <img src="./assets/images/portfolio/banners/Banner-vertical-3.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/banners/Banner-vertical-3.png" onclick="FullView(this.src)" />
             </div>
             <div class="vertical project-item" data-category="banners">
-              <img src="./assets/images/portfolio/banners/Banner-big-1.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/banners/Banner-big-1.png" onclick="FullView(this.src)" />
             </div>
             <div class="vertical project-item" data-category="banners">
-              <img src="./assets/images/portfolio/banners/Banner-vertical-4.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/banners/Banner-vertical-4.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="renders">
-              <img src="./assets/images/portfolio/renders/Render-horizontal-4.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/renders/Render-horizontal-4.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="renders">
-              <img src="./assets/images/portfolio/renders/Render-horizontal-5.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/renders/Render-horizontal-5.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="renders">
-              <img src="./assets/images/portfolio/renders/Render-horizontal-6.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/renders/Render-horizontal-6.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-3.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-3.png" onclick="FullView(this.src)" />
             </div>
             <div class="horizontal project-item" data-category="renders">
-              <img src="./assets/images/portfolio/renders/Render-horizontal-8.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/renders/Render-horizontal-8.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="renders">
-              <img src="./assets/images/portfolio/renders/Render-horizontal-7.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/renders/Render-horizontal-7.png" onclick="FullView(this.src)" />
             </div>
             <div class="horizontal project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-5.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-5.png" onclick="FullView(this.src)" />
             </div>
             <div class="horizontal project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-8.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-8.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-7.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-7.png" onclick="FullView(this.src)" />
             </div>
             <div class="horizontal project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-9.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-9.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="posters">
-              <img src="./assets/images/portfolio/posters/Poster-3.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/posters/Poster-3.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="posters">
-              <img src="./assets/images/portfolio/posters/Poster-8.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/posters/Poster-8.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="posters">
-              <img src="./assets/images/portfolio/posters/Poster-9.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/posters/Poster-9.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="posters">
-              <img src="./assets/images/portfolio/posters/Poster-7.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/posters/Poster-7.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-4.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-4.png" onclick="FullView(this.src)" />
             </div>
             <div class="horizontal project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-12.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-12.png" onclick="FullView(this.src)" />
             </div>
             <div class="horizontal project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-13.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-13.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-10.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-10.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="logo designs">
-              <img src="./assets/images/portfolio/logo-designs/Logo-11.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/logo-designs/Logo-11.png" onclick="FullView(this.src)" />
             </div>
             <div class="horizontal project-item" data-category="banners">
-              <img src="./assets/images/portfolio/banners/Banner-horizontal-2.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/banners/Banner-horizontal-2.png" onclick="FullView(this.src)" />
             </div>
             <div class="horizontal project-item" data-category="banners">
-              <img src="./assets/images/portfolio/banners/Banner-horizontal-1.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/banners/Banner-horizontal-1.png" onclick="FullView(this.src)" />
             </div>
             <div class="horizontal project-item" data-category="banners">
-              <img src="./assets/images/portfolio/banners/Banner-horizontal-6.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/banners/Banner-horizontal-6.png" onclick="FullView(this.src)" />
             </div>
             <div class="vertical project-item" data-category="banners">
-              <img src="./assets/images/portfolio/banners/Banner-vertical-2.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/banners/Banner-vertical-2.png" onclick="FullView(this.src)" />
             </div>
             <div class="project-item" data-category="posters">
-              <img src="./assets/images/portfolio/posters/Poster-6.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/posters/Poster-6.png" onclick="FullView(this.src)" />
             </div>
             <div class="horizontal project-item" data-category="banners">
-              <img src="./assets/images/portfolio/banners/Banner-horizontal-4.png" onclick="FullView(this.src)"/>
+              <img src="./assets/images/portfolio/banners/Banner-horizontal-4.png" onclick="FullView(this.src)" />
             </div>
           </div>
         </section>
@@ -536,73 +578,74 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="./js/FullView.js"></script>
   <script src="./js/imageFiltering.js"></script>
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const resumeFilterBtns = document.querySelectorAll('[data-resume-filter-btn]');
-  const timelineItems = document.querySelectorAll('.timeline-item');
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const resumeFilterBtns = document.querySelectorAll('[data-resume-filter-btn]');
+      const timelineItems = document.querySelectorAll('.timeline-item');
 
-  resumeFilterBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-      const filterValue = this.getAttribute('data-resume-filter-btn');
-      
-      resumeFilterBtns.forEach(btn => btn.classList.remove('active'));
-      this.classList.add('active');
+      resumeFilterBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+          const filterValue = this.getAttribute('data-resume-filter-btn');
 
-      timelineItems.forEach(item => {
-        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-          item.style.display = '';
-        } else {
-          item.style.display = 'none';
-        }
+          resumeFilterBtns.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+
+          timelineItems.forEach(item => {
+            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+              item.style.display = '';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
       });
     });
-  });
-});
-</script>
+  </script>
 
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const filterBtns = document.querySelectorAll('[data-filter-btn]');
-  const projectItems = document.querySelectorAll('.project-item');
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const filterBtns = document.querySelectorAll('[data-filter-btn]');
+      const projectItems = document.querySelectorAll('.project-item');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-      const filterValue = this.textContent.trim().toLowerCase();
-      
-      filterBtns.forEach(btn => btn.classList.remove('active'));
-      this.classList.add('active');
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+          const filterValue = this.textContent.trim().toLowerCase();
 
-      projectItems.forEach(item => {
-        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-          item.style.display = '';
-        } else {
-          item.style.display = 'none';
-        }
+          filterBtns.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+
+          projectItems.forEach(item => {
+            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+              item.style.display = '';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
       });
     });
-  });
-});
-</script>
+  </script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FMJHMK0W72"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FMJHMK0W72"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-FMJHMK0W72');
-</script>
+    gtag('config', 'G-FMJHMK0W72');
+  </script>
 
-<script src="./js/categoryChart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://apis.google.com/js/api.js"></script>
-<script src="https://accounts.google.com/gsi/client" async defer></script>
-<script src="./js/auth.js"></script>
-<script src="./js/analytics.js"></script>
-<script src="./js/app.js"></script>
+  <script src="./js/categoryChart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="./js/auth.js"></script>
+  <script src="./js/analytics.js"></script>
+  <script src="./js/app.js"></script>
 
 </body>
+
 </html>
