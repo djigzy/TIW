@@ -1,3 +1,5 @@
+const PROPERTY_ID = '474784597';
+
 async function fetchAnalyticsData() {
     try {
       const accessToken = localStorage.getItem('access_token');

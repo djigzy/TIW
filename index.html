@@ -171,39 +171,11 @@
         <section class="chart">
           <canvas id="chart" width="400" height="200"></canvas>
 
-          <!-- <h1>Google Analytics Data</h1>
+          <h1>Google Analytics Data</h1>
           <button onclick="handleAuthClick()">Sign In</button>
-          <button onclick="handleSignoutClick()">Sign Out</button> -->
+          <button onclick="handleSignoutClick()">Sign Out</button>
 
-          <div id="g_id_onload" data-client_id="227185617727-8o7v5dsg7d7a7csral5tdsavih30jlql.apps.googleusercontent.com" data-login_uri="https://djigzy.github.io/TIW/"
-            data-auto_prompt="false">
-          </div>
-
-          <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
-            data-text="sign_in_with" data-size="large" data-logo_alignment="left">
-          </div>
-
-          <script>
-            function onSignInResponse(response) {
-                const credential = response.credential;
-                console.log("ID Token:", credential);
-    
-                const payload = JSON.parse(atob(credential.split('.')[1]));
-                console.log("User Info:", payload);
-    
-                fetchAnalyticsData(credential);
-            }
-    
-            window.onload = () => {
-                google.accounts.id.initialize({
-                    client_id: "227185617727-8o7v5dsg7d7a7csral5tdsavih30jlql.apps.googleusercontent.com",
-                    callback: onSignInResponse,
-                });
-    
-                google.accounts.id.prompt(); // Display the One Tap prompt
-            };
-        </script>
-
+        
 
         </section>
       </article>
