@@ -42,8 +42,8 @@ async function fetchAnalyticsData() {
   }
   
   function processAnalyticsData(data) {
-    const labels = [];
-    const values = [];
+    let labels = [];
+    let values = [];
   
     data.rows.forEach(row => {
       labels.push(row.dimensionValues[0].value); // Assuming the first dimension is 'country'
