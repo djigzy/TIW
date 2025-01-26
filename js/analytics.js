@@ -1,4 +1,5 @@
 const PROPERTY_ID = '474784597';
+const API_KEY = 'AIzaSyBfhpYPm3rZ11lz5zEa978z_FeEvJSS_d4'
 
 async function fetchAnalyticsData() {
     try {

@@ -7,8 +7,8 @@ function renderChart(data) {
             datasets: [{
                 label: 'Active Users',
                 data: data.values,
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(244, 244, 35, 0.2)',
+                borderColor: 'rgb(243, 214, 27)',
                 borderWidth: 1
             }]
         },
@@ -24,15 +24,3 @@ function renderChart(data) {
 }
 
 
-const data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-    values: [12, 19, 3, 5, 2, 3]
-};
-
-document.addEventListener("DOMContentLoaded", function() {
-    const data = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-        values: [12, 19, 3, 5, 2, 3]
-    };
-    renderChart(data);
-});
