@@ -166,8 +166,14 @@
       </section>
 
       <section class="chart">
-        <canvas id="chart"></canvas>
+        <canvas id="chart" width="400" height="200"></canvas>
+
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <h1>Google Analytics Data</h1>
+        <button onclick="handleAuthClick()">Sign In</button>
+        <button onclick="handleSignoutClick()">Sign Out</button>
+        <canvas id="chart" width="400" height="200"></canvas>
       </section>
       </article>
 
@@ -585,6 +591,11 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <script src="./js/categoryChart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="./js/auth.js"></script>
+<script src="./js/analytics.js"></script>
+<script src="./js/app.js"></script>
 
 </body>
 </html>
