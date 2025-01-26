@@ -168,12 +168,9 @@
       <section class="chart">
         <canvas id="chart" width="400" height="200"></canvas>
 
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
         <h1>Google Analytics Data</h1>
         <button onclick="handleAuthClick()">Sign In</button>
         <button onclick="handleSignoutClick()">Sign Out</button>
-        <canvas id="chart" width="400" height="200"></canvas>
       </section>
       </article>
 
@@ -588,6 +585,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FMJHMK0W72"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FMJHMK0W72');
 </script>
 
 <script src="./js/categoryChart.js"></script>
